@@ -14,4 +14,4 @@ the top of the page.
 
 Include javasctipt file to your page and then you can:
 
-	document.addEventListener("exitintend", console.log);
+	document.addEventListener("exitintent", console.log);
