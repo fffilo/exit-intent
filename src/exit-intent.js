@@ -78,20 +78,28 @@
     };
 
     /**
-     * Document mouseleave event handler
+     * Document mouseout event handler
      *
      * @param  {Event} e
      * @return {Void}
      */
-    var handleMouseleave = function(e) {
+    var handleMouseout = function(e) {
+        // check related target (it should be
+        // null if we're dragging mouse outside
+        // the window)
+        if (e.relatedTarget)
+            return;
+
+        // check offset
         if (e.clientY > EXITINTENT_OFFSET)
             return;
 
+        // emit event
         var event = createEvent(e);
-        e.target.dispatchEvent(event);
+        this.dispatchEvent(event);
     };
 
     // bind handler
-    document.addEventListener("mouseleave", handleMouseleave);
+    document.addEventListener("mouseout", handleMouseout);
 
 })(window, document);
