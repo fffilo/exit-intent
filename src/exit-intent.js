@@ -70,7 +70,7 @@
                 params.shiftKey,
                 params.metaKey,
                 params.button,
-                params.relatedTarget,
+                params.relatedTarget
             );
         };
 
